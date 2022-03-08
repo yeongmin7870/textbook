@@ -3,8 +3,10 @@ package kr.luke.textbook
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ListView
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kr.luke.textbook.databinding.ActivityHomeBinding
@@ -39,5 +41,12 @@ class homeActivity : AppCompatActivity() {
             finish()
         }
 
+
+        val fab: View = findViewById(R.id.fab_btn)
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                .setAction("Action", null)
+                .show()
+        }
     }
 }
